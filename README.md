@@ -1,2 +1,2 @@
 # 201d56-about-me
-An About Me
+The repository contains the index.html which displays an About Me page as part of the portfolio project.
