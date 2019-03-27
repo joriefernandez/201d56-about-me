@@ -1,5 +1,7 @@
 "use strict";
+
 // Input Name
+
 do{
   var userName = prompt('What is your name?');
   if (userName == ""){
@@ -7,6 +9,9 @@ do{
   }
   console.log('User entered ' + userName);
 }while (userName == "");
+
+
+
 
 //Check name
 if (userName === 'Jorie'){
@@ -45,6 +50,7 @@ for (var index = 0; index < questions.length; index++){
     alert('It\'s understandable if you have no answer yet. You can get back to me later!');
   } 
 }
+
 
 var percent = (score/5) * 100;
 alert("We have " + percent + " % similarity.");
