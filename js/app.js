@@ -53,5 +53,6 @@ for (var index = 0; index < questions.length; index++){
   }
 }
 
+
 alert('You know me ' + (score/5) * 100 + '%.');
 
