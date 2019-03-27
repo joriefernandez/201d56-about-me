@@ -1,5 +1,5 @@
 h1{
-  background: blue;
+  background: skyblue;
   text-align: center;
   height: 50px;
   color: white;
@@ -8,5 +8,6 @@ h1{
 
 h2{
   text-align: center;
-
+  background: pink;
+  color: white;
 }

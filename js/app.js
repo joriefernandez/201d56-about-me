@@ -1,14 +1,14 @@
-"use strict";
+'use strict';
 
 // Input Name
 
 do{
   var userName = prompt('What is your name?');
-  if (userName == ""){
-    alert("Please enter a valid name!");
+  if (!userName){
+    alert('Please enter a valid name!');
   }
   console.log('User entered ' + userName);
-}while (userName == "");
+}while (userName === '');
 
 
 
@@ -39,19 +39,19 @@ var score = 0;
 for (var index = 0; index < questions.length; index++){
   var answer = prompt(questions[index]);
   answer = answer.toUpperCase();
-  console.log('For question ' + questions[index] + ' the user entered ' + answer);
+
+  let verify = 'For question ' + questions[index].toUpperCase() + ' you entered ' + answer.toUpperCase();
+  console.log(verify);
 
   if(answer === 'Y' || answer === 'YES' ){
-    alert('So glad we are the same!');
+    alert(verify + '. You are correct!');
     score++;
   } else if (answer === 'N' || answer === 'NO'){
-    alert('Everyone is different and I am fine with that!');
+    alert(verify + '. We are different after all!');
   } else {
-    alert('It\'s understandable if you have no answer yet. You can get back to me later!');
-  } 
+    alert('It\'s understandable if you have no answer yet. You can ask me later!');
+  }
 }
 
-
-var percent = (score/5) * 100;
-alert("We have " + percent + " % similarity.");
+alert('You know me ' + (score/5) * 100 + '%.');
 
