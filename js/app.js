@@ -47,7 +47,7 @@ for (var index = 0; index < questions.length; index++){
     alert(verify + '. You are correct!');
     score++;
   } else if (answer === 'N' || answer === 'NO'){
-    alert(verify + '. We are different after all!');
+    alert(verify + '. Sorry you are wrong!');
   } else {
     alert('It\'s understandable if you have no answer yet. You can ask me later!');
   }
