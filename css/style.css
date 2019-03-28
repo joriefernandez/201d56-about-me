@@ -3,26 +3,24 @@ header{
   text-align: center;
   position: -webkit-sticky;
   position: sticky;
-  
+  background-image: url('/img/header.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px;
 }
 
 
 h1{
-  background-color: skyblue;
+  /* background-color: skyblue; */
   height: 50px;
-  padding: 40px 40px 0px;
+  padding: 220px 40px 0px;
   margin-bottom: 0;
+  color: antiquewhite;
+
 }
 
-div{
-  background-image: url('./img/header.jpg');
-  background-position: center;
-  background-size: 100% 100%;
-  
-} 
-
 h2{
-  background: pink;
+  /* background: pink; */
   margin: 0.1;
   padding-top: 0;
 }

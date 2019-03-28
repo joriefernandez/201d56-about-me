@@ -62,42 +62,18 @@ for (var index = 0; index < questions.length; index++){
   var limit;
 
   if(index < 5){
-    userAns = prompt(questions[index]);
-    console.log('User entered ' + userAns + ' for question ' +
-        questions[index] );
-    if(userAns){
-      if(answers[index].includes(userAns.toUpperCase())){
-        console.log('User got the right answer');
-        alert('You guessed it right!');
-        score++;
-      } else{
-        alert(correctAns + '. Incorrect response.');
-      }
-    }else{
-      alert('Invalid response. Your answer is marked as incorrect.');
-    }
+    promptUserYesOrNo(questions[index]);
   }
 
   //Numeric input for question 6
   if(index === 5){
     limit = 4;
     for (numTry = 1; numTry <= limit; ++numTry){
-      userAns = parseInt(prompt(questions[index]));
-      console.log('Try ' + numTry + ': User answered ' + userAns + ' for question ' + questions[index]);
-      if(!(isNaN(userAns))){
-        console.log('User entered a number');
-        if(userAns === answers[index]){
-          console.log('User guessed the correct number');
-          score++;
-          alert(correctAlert);
-          break;
-        }else if (userAns > answers[index]){
-          alert(initMsg + 'too high.');
-        } else if (userAns < answers[index]){
-          alert(initMsg + 'too low.');
-        }
-      }else{
-        alert(initMsg + 'not a number.');
+
+      if(promptUserNumber(questions[index])){
+        score++;
+        alert(correctAlert); 
+        break;
       }
     }
 
@@ -109,17 +85,11 @@ for (var index = 0; index < questions.length; index++){
   if(index === 6){
     limit = 6;
     for(numTry = 1; numTry <= limit; numTry++){
-      userAns = prompt(questions[index]);
-      if(userAns){
-        if(answers[index].includes(userAns.toUpperCase())){
-          console.log('Try ' + numTry + ': user guessed one of the answers');
-          alert(correctAlert);
-          score++;
-          break;
-        } else{
-          console.log('Try ' + index + ': user entered ' + userAns);
-          alert('Sorry your response is incorrect. Try again!');
-        }
+      if(promptUserText(questions[index])){
+        console.log('Try ' + numTry + ': user guessed one of the answers');
+        alert(correctAlert);
+        score++;
+        break;
       }
     }
     //If user reached the max without getting the correct answer
@@ -132,6 +102,60 @@ for (var index = 0; index < questions.length; index++){
 //Show user total number of correct guesses
 alert('You got ' + score + ' out of ' + answers.length +
 '. \n\nThank you for playing ' + userName + '. You can now see my full portfolio!');
+
+
+//ask user question
+function promptUserYesOrNo(userAns){
+  userAns = prompt(questions[index]);
+  console.log('User entered ' + userAns + ' for question ' +
+      questions[index] );
+  if(userAns){
+    if(answers[index].includes(userAns.toUpperCase())){
+      console.log('User got the right answer');
+      alert('You guessed it right!');
+      score++;
+    } else{
+      alert(correctAns + '. Incorrect response.');
+    }
+  }else{
+    alert('Invalid response. Your answer is marked as incorrect.');
+  }
+}
+
+
+//ask user to answer with number
+function promptUserNumber(userAns){
+  userAns = parseInt(prompt(questions[index]));
+  var flag = true;
+  console.log('Try ' + numTry + ': User answered ' + userAns + ' for question ' + questions[index]);
+  if(!(isNaN(userAns))){
+    console.log('User entered a number');
+
+    if(userAns > answers[index]){
+      alert(initMsg + 'too high.');
+      flag = false;
+    } else if (userAns < answers[index]){
+      alert(initMsg + 'too low.');
+      flag = false;
+    }
+  }else{
+    alert(initMsg + 'not a number.');
+    flag = false;
+  }
+  return flag;
+}
+
+
+//ask user to enter a word
+function promptUserText(userAns){
+  userAns = prompt(questions[index]);
+  if(!answers[index].includes(userAns.toUpperCase())){
+    console.log('Try ' + index + ': user entered ' + userAns);
+    alert('Sorry your response is incorrect. Try again!');
+    return false;
+  }
+  return true;
+}
 
 
 
