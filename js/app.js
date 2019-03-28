@@ -8,7 +8,7 @@ do{
     alert('Please enter a valid name!');
   }
   console.log('User entered ' + userName);
-}while (userName === '');
+}while (!userName);
 
 
 
@@ -25,34 +25,113 @@ if (userName === 'Jorie'){
 
 alert('Welcome to the site ' + userName + '. Please answer Y for Yes or N for No to the questions.');
 
-// Yes/ No questions to ask
-var question1 = 'Do I know you?';
+// Questions to ask
+var question1 = 'Am I good singer?';
 var question2 = 'Do I like foods?';
 var question3 = 'Do I like hiking?';
 var question4 = 'Have I visited other states?';
 var question5 = 'Did I do something for the first time recently?';
+var question6 = 'How many dogs I had?';
+var question7 = 'What are the countries that I want to visit?';
 
-// Display questions
-var questions = [question1, question2, question3, question4, question5];
+// question array
+var questions = [question1, question2, question3, question4,
+  question5, question6, question7];
+
+//Possible Answers
+var noAns = 'N';
+var yesAns = 'Y';
+var numDogs = 4;
+var placeToVisit = ['JAPAN', 'KOREA', 'ROME'];
+
+// Answer bank
+var answers = [noAns, yesAns, yesAns, yesAns, yesAns, numDogs, placeToVisit];
+
 var score = 0;
+var correctAlert = 'Your response is correct!';
+
+
 
 for (var index = 0; index < questions.length; index++){
-  var answer = prompt(questions[index]);
-  answer = answer.toUpperCase();
 
-  let verify = 'For question ' + questions[index].toUpperCase() + ' you entered ' + answer.toUpperCase();
-  console.log(verify);
+  var correctAns = 'The correct answer is ' + answers[index];
+  //Ask the user
+  var userAns;
+  var numTry;
+  var initMsg = 'Your answer is ';
+  var limit;
 
-  if(answer === 'Y' || answer === 'YES' ){
-    alert(verify + '. You are correct!');
-    score++;
-  } else if (answer === 'N' || answer === 'NO'){
-    alert(verify + '. Sorry you are wrong!');
-  } else {
-    alert('It\'s understandable if you have no answer yet. You can ask me later!');
+  if(index < 5){
+    userAns = prompt(questions[index]);
+    console.log('User entered ' + userAns + ' for question ' +
+        questions[index] );
+    if(userAns){
+      if(userAns.toUpperCase() === answers[index]){
+        console.log('User got the right answer');
+        alert('You guessed it right!');
+        score++;
+      } else{
+        alert(correctAns + '. Incorrect response.');
+      }
+    }else{
+      alert('Invalid response. Your answer is marked as incorrect.');
+    }
+  }
+
+  //Numeric input for question 6
+  if(index === 5){
+    limit = 4;
+    for (numTry = 1; numTry <= limit; ++numTry){
+      userAns = parseInt(prompt(questions[index]));
+      console.log('Try ' + numTry + ': User answered ' + userAns + ' for question ' + questions[index]);
+      if(!(isNaN(userAns))){
+        console.log('User entered a number');
+        if(userAns === answers[index]){
+          console.log('User guessed the correct number');
+          score++;
+          alert(correctAlert);
+          break;
+        }else if (userAns > answers[index]){
+          alert(initMsg + 'too high.');
+        } else if (userAns < answers[index]){
+          alert(initMsg + 'too low.');
+        }
+      }else{
+        alert(initMsg + 'not a number.');
+      }
+    }
+
+    //If user reached the max without getting the correct answer
+    if(answers[index] !== userAns && numTry > limit){
+      alert(correctAns + '. Better luck next time!');
+    }
+  }
+  if(index === 6){
+    limit = 6;
+    for(numTry = 1; numTry <= limit; numTry++){
+      userAns = prompt(questions[index]);
+      if(userAns){
+        if(answers[index].includes(userAns.toUpperCase())){
+          console.log('Try ' + numTry + ': user guessed one of the answers');
+          alert(correctAlert);
+          score++;
+          break;
+        } else{
+          console.log('Try ' + index + ': user entered ' + userAns);
+          alert('Sorry your response is incorrect. Try again!');
+        }
+      }
+    }
+    //If user reached the max without getting the correct answer
+    if(answers[index] !== userAns && numTry > limit){
+      alert(correctAns + '. Better luck next time!');
+    }
   }
 }
 
+//Show user total number of correct guesses
+alert('You got ' + score + ' out of ' + answers.length +
+'. \n\nThank you for playing ' + userName + '. You can now see my full portfolio!');
 
-alert('You know me ' + (score/5) * 100 + '%.');
+
 

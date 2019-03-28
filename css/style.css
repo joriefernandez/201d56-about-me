@@ -3,23 +3,31 @@ header{
   text-align: center;
   position: -webkit-sticky;
   position: sticky;
+  
 }
 
 
 h1{
-  background: pink;
+  background-color: skyblue;
   height: 50px;
   padding: 40px 40px 0px;
   margin-bottom: 0;
+}
+
+div{
+  background-image: url('./img/header.jpg');
+  background-position: center;
+  background-size: 100% 100%;
+  
 } 
 
 h2{
-  background: skyblue;
+  background: pink;
   margin: 0.1;
   padding-top: 0;
 }
 
-dt{
+.about{
   font-weight: bold;
   font-size: 1.30em;
 }

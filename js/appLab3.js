@@ -130,5 +130,5 @@ for (var index = 0; index < questions.length; index++){
 
 //Show user total number of correct guesses
 alert('You got ' + score + ' out of ' + answers.length +
-'. \n\nThank you for playing. You can now see my full portfolio!');
+'. \n\nThank you for playing ' + userName + '. You can now see my full portfolio!');
 
