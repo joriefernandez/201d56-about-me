@@ -39,8 +39,8 @@ var questions = [question1, question2, question3, question4,
   question5, question6, question7];
 
 //Possible Answers
-var noAns = 'N';
-var yesAns = 'Y';
+var noAns = ['N', 'NO'];
+var yesAns = ['Y', 'YES'];
 var numDogs = 4;
 var placeToVisit = ['JAPAN', 'KOREA', 'ROME'];
 
@@ -66,7 +66,7 @@ for (var index = 0; index < questions.length; index++){
     console.log('User entered ' + userAns + ' for question ' +
         questions[index] );
     if(userAns){
-      if(userAns.toUpperCase() === answers[index]){
+      if(answers[index].includes(userAns.toUpperCase())){
         console.log('User got the right answer');
         alert('You guessed it right!');
         score++;
