@@ -46,33 +46,42 @@ var placeToVisit = ['JAPAN', 'KOREA', 'ROME'];
 
 // Answer bank
 var answers = [noAns, yesAns, yesAns, yesAns, yesAns, numDogs, placeToVisit];
-
+//score
 var score = 0;
+//alert for correct answer
 var correctAlert = 'Your response is correct!';
 
 
-
+//Loop through the list of questions
 for (var index = 0; index < questions.length; index++){
-
+  //message for the correct answer
   var correctAns = 'The correct answer is ' + answers[index];
-  //Ask the user
+  //user input
   var userAns;
+  //current number of tries
   var numTry;
+  //initial alert for user input
   var initMsg = 'Your answer is ';
+  //maximum number of tries
   var limit;
 
+  //Check if questions 1-5
   if(index < 5){
+    //Show the yes/no prompts and validation
     promptUserYesOrNo(questions[index]);
   }
 
   //Numeric input for question 6
   if(index === 5){
+    //set max limit
     limit = 4;
-    for (numTry = 1; numTry <= limit; ++numTry){
 
+    //loop until max try
+    for (numTry = 1; numTry <= limit; ++numTry){
+      //Check if the user entered the correct answer
       if(promptUserNumber(questions[index])){
         score++;
-        alert(correctAlert); 
+        alert(correctAlert);
         break;
       }
     }
@@ -82,6 +91,8 @@ for (var index = 0; index < questions.length; index++){
       alert(correctAns + '. Better luck next time!');
     }
   }
+
+  //Prompt for question 7
   if(index === 6){
     limit = 6;
     for(numTry = 1; numTry <= limit; numTry++){
@@ -104,11 +115,18 @@ alert('You got ' + score + ' out of ' + answers.length +
 '. \n\nThank you for playing ' + userName + '. You can now see my full portfolio!');
 
 
-//ask user question
-function promptUserYesOrNo(userAns){
-  userAns = prompt(questions[index]);
+/*
+Function to show the user yes/no  questions and validate
+the input.
+Input: userQuestion - question for the user
+*/
+function promptUserYesOrNo(userQuestion){
+  //Store user answer
+  userAns = prompt(userQuestion);
   console.log('User entered ' + userAns + ' for question ' +
-      questions[index] );
+      userQuestion );
+
+  //validate input
   if(userAns){
     if(answers[index].includes(userAns.toUpperCase())){
       console.log('User got the right answer');
@@ -123,11 +141,18 @@ function promptUserYesOrNo(userAns){
 }
 
 
-//ask user to answer with number
-function promptUserNumber(userAns){
-  userAns = parseInt(prompt(questions[index]));
+/*
+Function to show the user the number  question and validate
+the input.
+Input: userQuestion - question for the users
+Return: flag - indicate valid answer
+      true - valid input
+      false - invalid input
+*/
+function promptUserNumber(userQuestion){
+  userAns = parseInt(prompt(userQuestion));
   var flag = true;
-  console.log('Try ' + numTry + ': User answered ' + userAns + ' for question ' + questions[index]);
+  console.log('Try ' + numTry + ': User answered ' + userAns + ' for question ' + userQuestion);
   if(!(isNaN(userAns))){
     console.log('User entered a number');
 
@@ -146,9 +171,17 @@ function promptUserNumber(userAns){
 }
 
 
-//ask user to enter a word
-function promptUserText(userAns){
-  userAns = prompt(questions[index]);
+
+/*
+Function to show the user question with possible answers and validate
+the input.
+Input: userQuestion - question for the users
+Return: flag - indicate valid answer
+      true - valid input
+      false - invalid input
+*/
+function promptUserText(userQuestion){
+  userAns = prompt(userQuestion);
   if(!answers[index].includes(userAns.toUpperCase())){
     console.log('Try ' + index + ': user entered ' + userAns);
     alert('Sorry your response is incorrect. Try again!');
