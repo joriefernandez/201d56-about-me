@@ -8,9 +8,8 @@ do{
     alert('Please enter a valid name!');
   }
   console.log('User entered ' + userName);
+
 }while (!userName);
-
-
 
 
 //Check name
@@ -22,6 +21,11 @@ if (userName === 'Jorie'){
 } else{
   console.log('Welcome to the site ' + userName );
 }
+
+var greeting = 'Hi ' + userName + '. Welcome to my site!';
+document.getElementById('user-profile').innerHTML = greeting;
+
+
 
 alert('Welcome to the site ' + userName + '. Please answer Y for Yes or N for No to the questions.');
 
@@ -189,6 +193,5 @@ function promptUserText(userQuestion){
   }
   return true;
 }
-
 
 

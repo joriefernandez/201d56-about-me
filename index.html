@@ -1,68 +1,106 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>About Me</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <title>Jorie Fernandez Portfolio</title>
     <link rel="stylesheet" href = "./css/style.css">
   </head>
   <body>
-    <header>
-      <div>
-      
-      <h1>Jorie Fernandez Portfolio</h1>
-      
-      </div>
-    </header>
+    <div id='name'>
+      <img id='avatar' src='/img/profile.png' alt class='avatar'><br>
+      <a id='header-name' class='teal-color'>Jorie Fernandez</a><br>
+      <span id='title' class='brown-color'>Software Developer | Machine Learning Engineer</span>
+    </div>
+   
+    <nav></nav>
+    <!-- <header></header> -->
     
     <main>
-      <nav></nav>
+      <section id='visitor-greet'>
+        <br>
+        <h2 id='user-profile'></h2>
+        <h3>About Me</h3>
+        <div>
+          <ul>
+            <li>A military veteran who is a software development and machine learning enthusiast</li>
+            <li>Loves problem-solving and continuous learning in the technology industry </li>
+            <li>Enjoys the collaborative environment by working with diverse and intelligent people</li>
+          </ul>
+        </div>
+      </section>
 
-      <ul>
-        <li class='about'>Bio</li>
-        
-          <p> A military veteran. Originally from the Philippines. </p> 
-        
 
-        <li class='about'>Education</li>
-        
+      <section id='education'>
+        <h3>Education</h3>
+        <div>
+          <img src='/img/uw.png' alt='University of Washington' align ='left'>
           <p>Bachelor's of Science in Computer Science and Systems <br>
-          University of Washington <br>
-          Completion date: June 2018 
+            University of Washington <br>
+            Completion date: June 2018 
           </p>
-        
-
-        <li class='about'>Experience</li>
-        
-           <p>The following are my professional experience:
-          
+        </div>
+      </section>
+      
+      <section id='experience'>
+          <h3>Experience</h3>
+          <div>
             <ul>
-              <li>AWS Software Development Engineer Apprentice</li>
-              <li>Walt Disney Emerging Technology Intern</li>
-              <li>US Army National Guard Radiology Technologist</li>
-            </ul>
-          </p>
-        
-        
-        <li class='about'>Goals</li>
-          <p> My short-term and long-term goals I am working on:
-          <ul>
-            <li>Complete my CodeFellows training</li>
-            <li>Complete the project assigned to me during OJT</li>
-            <li>Be converted to a full-time employee in Amazon</li>
-          </ul>
-          </p>
+              <li class = 'bold-list'>Machine Learning Intern - Walt Disney Seattle (September 2018 – December 2018)</li>
+              <p>
+                  Emerging Technology intern who participated in anomaly detection and customer demographic prediction projects:
+                  <ul>
+                    <li>Contributed to the data gathering and analysis by utilizing open source technologies, such as Kibana, New Relic,and Bash scripts</li>
+                    <li>Created classifiers using an online data source to demonstrate feature engineering and machine learning algorithm parameter tuning</li>
+                    <li>Used AWS Cloud Services to process more than 100 GB of JSON data to preprocess and refactor existing program</li>
+                  </ul>
+              </p>
 
-        <li class = 'about'>Fun Facts</li>
-        <p> Based from the guessing game: 
-          <ul>
-            <li>I am not a good singer but I like karaoke.</li>
-            <li>I love foods!</li>
-            <li>I enjoy outdoor activities like hiking and camping.</li>
-            <li>I have visited 9 states so far. Aiming to visit all of it.</li>
-            <li>I tried snowboarding for the first time.</li>
-            <li>I had 4 dogs.</li>
-            <li>I want to visit Japan, Korea, and Rome.</li>
-          </ul>
-        </p>
+              <li class = 'bold-list'>Healthcare Specialist - US Army National Guard (May 2011 – January 2017)</li>
+              <p>
+                  Awarded the Army Achievement Medal for meritorious service by accomplishing every task quickly and efficiently:
+                  <ul>
+                    <li>Conducted occupational and driver’s trainings of more than 100 personnel which led to 100% license certification and medical readiness</li>
+                    <li>Volunteered to prepare at least 15 vehicles and to install more than five radio systems two days prior to the annual training which resulted to a well-equipped and organized four-hour convoy to the training center</li>
+                    <li>Used AWS Cloud Services to process more than 100 GB of JSON data to preprocess and refactor existing program</li>
+                    <li>Provided detail-oriented medical support for the weapon range qualification of more than 300 soldiers which ensured zero injuries and successful task completion</li>
+                  </ul>
+              </p>               
+            </ul>
+          </div>
+        </section> 
+          
+        <section id='goals'>
+          <h3>Goals</h3>
+          <div>
+              <p> My short-term and long-term goals I am currently working on:
+                  <ul>
+                    <li>Complete my CodeFellows training in four months</li>
+                    <li>Complete the project assigned to me during OJT in AWS</li>
+                    <li>Be converted to a full-time employee in Amazon</li>
+                  </ul>
+              </p>
+          </div>
+        </section>
+        
+        
+        <section id='fun-facts'>
+            <h3>Fun Facts</h3>
+            <div>
+                <p> Here are my fun facts based from the guessing game: 
+                    <ul>
+                      <li>I am not a good singer but I like karaoke.</li>
+                      <li>I love foods!</li>
+                      <li>I enjoy outdoor activities like hiking and camping.</li>
+                      <li>I have visited 9 states so far. Aiming to visit all of it.</li>
+                      <li>I tried snowboarding for the first time.</li>
+                      <li>I had 4 dogs.</li>
+                      <li>I want to visit Japan, Korea, and Rome.</li>
+                    </ul>
+                  </p>
+            </div>
+          </section>
+        
         <p>Top 10 Movies (info courtesy of IMDB)
           <ol>
             <li><a href='https://www.imdb.com/title/tt0241527/'>Harry Potter</a></li>
@@ -83,7 +121,15 @@
 
 
     </main>
-    <footer></footer>
+    <footer>
+      <p>
+          &#169; 
+          https://www.w3schools.com/default.asp
+          https://medium.com/
+          http://www.washington.edu/
+          https://www.imdb.com/
+      </p>
+    </footer>
     
 
     <script src="./js/app.js"></script> 
