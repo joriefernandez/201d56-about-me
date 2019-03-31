@@ -48,7 +48,11 @@ body {
   top: 0;
   z-index: 2; 
   font-size:30px;
-  background-color:linen;
+  /* background-color:linen; */
+  background-image:url('/img/ml_banner.png');
+  background-repeat: no repeat;
+  background-size: 100%;
+  
 }
 
 
@@ -87,11 +91,13 @@ img {
 }
 
 .teal-color{
-  color:#008033;
+  /* color:#008033; */
+  color: antiquewhite;
 }
 
 .brown-color {
-  color:#794d48;
+  /* color:#794d48; */
+  color: linen;
 }
 
 p {
@@ -105,5 +111,10 @@ p {
 
 .social-links {
   font-size: 24px;
+  
+}
+
+.social-icon{
+  color:white;
 }
 
