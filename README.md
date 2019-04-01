@@ -5,4 +5,4 @@ Current update: added fun facts and questions for the guessing games. Links are 
 
 Pair-programming exercise with William. Adding functions for each question. 
 
-Current update as of March 31, 2019: Added links to social accounts such as LinkedIn, e-mail, and Github. 
+Current update as of March 31, 2019: Added links to social accounts such as LinkedIn, e-mail, and Github. Name of the user is also displayed on the page after playing the guessing game, which is loaded when the site is visited.
