@@ -4,3 +4,5 @@ The repository contains the index.html which displays an About Me page as part o
 Current update: added fun facts and questions for the guessing games. Links are also provided for the Top 10 movies.
 
 Pair-programming exercise with William. Adding functions for each question. 
+
+Current update as of March 31, 2019: Added links to social accounts such as LinkedIn, e-mail, and Github. 
